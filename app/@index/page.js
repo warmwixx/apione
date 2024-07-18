@@ -8,7 +8,7 @@ export async function getData() {
    return res.json();
 }
 
-export default async function Center() {
+export default async function index() {
    if (!process.env.NEXT_PUBLIC_API_URL) {
       return null;
    }
