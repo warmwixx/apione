@@ -1,7 +1,5 @@
-"use server";
-
 import { NextResponse } from "next/server";
-import { mysqlPool } from "@/util/db";
+import { mysqlPool } from "../util/db";
 
 export async function GET(request) {
    try {

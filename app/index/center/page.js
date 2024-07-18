@@ -1,4 +1,10 @@
-import { getData } from "./data";
+export async function getData() {
+   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api`);
+   if (!res.ok) {
+      throw new Error("Failed to fetch data");
+   }
+   return res.json();
+}
 
 export default async function Center() {
    if (!process.env.NEXT_PUBLIC_API_URL) {
