@@ -1,3 +1,5 @@
+import React from "react";
+
 import Center from "./index/page";
 
 export default function Home() {
