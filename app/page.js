@@ -1,14 +1,15 @@
 import React from "react";
+import Link from "next/link";
 
 export async function getData() {
-   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api`);
+   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/center`);
    if (!res.ok) {
       throw new Error("Failed to fetch data");
    }
    return res.json();
 }
 
-export default async function index() {
+export default async function Home() {
    if (!process.env.NEXT_PUBLIC_API_URL) {
       return null;
    }
@@ -25,6 +26,14 @@ export default async function index() {
                   <h2>{e.id}</h2>
                   <h2>{e.province}</h2>
                   <h2>{e.states}</h2>
+                  <Link
+                     href={{
+                        pathname: "/province",
+                        query: { param: `${e.province}` },
+                     }}
+                  >
+                     ค้นหาตำบล
+                  </Link>
                </div>
             );
          })}
