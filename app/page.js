@@ -1,4 +1,4 @@
-import Center from "./index/center/page";
+import Center from "./index/page";
 
 export default function Home() {
    return (
