@@ -9,6 +9,9 @@ export async function getData() {
 }
 
 export default async function index() {
+   if (!process.env.NEXT_PUBLIC_API_URL) {
+      return null;
+   }
    const data = await getData();
 
    return (
