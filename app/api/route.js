@@ -1,3 +1,5 @@
+"use server";
+
 import { NextResponse } from "next/server";
 import { mysqlPool } from "@/util/db";
 
