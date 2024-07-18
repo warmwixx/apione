@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { mysqlPool } from "../util/db";
+import { mysqlPool } from "@/util/db";
 
 export async function GET(request) {
    try {
@@ -8,9 +8,7 @@ export async function GET(request) {
          `SELECT * from province WHERE states ="ภาคกลาง"`
       );
 
-      if (rows) {
-         return NextResponse.json(rows);
-      }
+      return NextResponse.json(rows);
    } catch (Error) {
       return NextResponse.json(Error);
    }
